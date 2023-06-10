@@ -13,10 +13,15 @@ public class ownerController {
     public ownerController(OwnerService ownerService) {
         this.ownerService = ownerService;
     }
-    @RequestMapping({"", "/find", "/index", "/index.html"})
+    @RequestMapping({"", "/list", "/index", "/index.html"})
     public String listOwners(Model model){
 
         model.addAttribute("owners", ownerService.findAll());
         return "owners/index";
+    }
+
+    @RequestMapping("/find")
+    public String findOwners(){
+        return "notImplemented";
     }
 }
